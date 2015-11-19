@@ -78,7 +78,7 @@ try {
   var endAsm = code.indexOf('// EMSCRIPTEN_END_FUNCS');
   var asm = code.substring(startAsm, endAsm);
   do {
-    var moar = false; // we need to re-do, as x(x( will not be fixed
+    var moar = false;
     asm = asm.replace(new RegExp('[^a-zA-Z0-9\\$\\_]' + minified + '\\(', 'g'), function(s) { moar = true; return s[0] + '(' });
   } while (moar);
   code = code.substring(0, startAsm) + asm + code.substring(endAsm);
