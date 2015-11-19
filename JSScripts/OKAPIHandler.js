@@ -44,4 +44,4 @@ alert(result);
 	}
 }
 
-alert("OK Script Version : v0.01");
+alert("OK Script Version : v0.02");
