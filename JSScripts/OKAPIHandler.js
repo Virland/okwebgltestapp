@@ -28,6 +28,7 @@ function TransferVotes (count) {
 }
 
 function API_callback (method, result, data) {
+alert(result);
 	switch(method) {
 	case "showPayment":
 		if(result == "ok") {
