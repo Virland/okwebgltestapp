@@ -7,6 +7,7 @@ function Init () {
 	},
 	function (error){
 		//initialization fail
+		alert("ZHOPA!!!");
 	});
 }
 
@@ -40,8 +41,9 @@ alert(result);
 		}
 		break;
 	default:
+		
 		break;
 	}
 }
 
-alert("OK Script Version : v0.02");
+alert("OK Script Version : v0.03");
