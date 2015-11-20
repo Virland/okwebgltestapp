@@ -4,6 +4,7 @@ function Init () {
 	FAPI.init(rParams["api_server"], rParams["apiconnection"],
 	function () {
 		//initialization success
+		SendMessage ("JSConnector", "Inited", "");
 	},
 	function (error){
 		//initialization fail
