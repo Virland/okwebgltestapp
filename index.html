@@ -61,11 +61,11 @@
 <script src="Release/fileloader.js"></script>
 <script>if (!(!Math.fround)) {
   var script = document.createElement('script');
-  script.src = "Release/ ReleaseOKSlots.js";
+  script.src = "Release/ FinalReleaseOKSlots.js";
   document.body.appendChild(script);
 } else {
   var codeXHR = new XMLHttpRequest();
-  codeXHR.open('GET', 'Release/ ReleaseOKSlots.js', true);
+  codeXHR.open('GET', 'Release/ FinalReleaseOKSlots.js', true);
   codeXHR.onload = function() {
     var code = codeXHR.responseText;
     if (!Math.fround) { 
@@ -78,7 +78,7 @@ try {
   var endAsm = code.indexOf('// EMSCRIPTEN_END_FUNCS');
   var asm = code.substring(startAsm, endAsm);
   do {
-    var moar = false;
+    var moar = false; // we need to re-do, as x(x( will not be fixed
     asm = asm.replace(new RegExp('[^a-zA-Z0-9\\$\\_]' + minified + '\\(', 'g'), function(s) { moar = true; return s[0] + '(' });
   } while (moar);
   code = code.substring(0, startAsm) + asm + code.substring(endAsm);
