@@ -17,7 +17,7 @@ function BuyItem (item_name) {
 		item: item_name
 	};
 	//FAPI.UI.showPayment(name : String, description : String, code : String, price : int, options : null, attributes : String(JSON), currency : String(ok), callback : String(false/true), uiConf : String(JSON));
-	FAPI.UI.showPayment("100 Золотых монет", "", 777, 1, null, null, "ok", "true");	//TODO
+	FAPI.UI.showPayment("100 Золотых монет", "Не покупай это гавно", "777", 1, null, null, "ok", "true");	//TODO
 }
 
 function TransferVotes (count) {
@@ -29,7 +29,7 @@ function TransferVotes (count) {
 }
 
 function API_callback (method, result, data) {
-alert(result);
+	alert(result);
 	switch(method) {
 	case "showPayment":
 		if(result == "ok") {
@@ -46,4 +46,4 @@ alert(result);
 	}
 }
 
-alert("OK Script Version : v0.03");
+alert("OK Script Version : v0.04");
